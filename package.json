@@ -1,0 +1,24 @@
+{
+  "name": "webmaker-user-client",
+  "description": "Utility functions for querying the webmaker user database",
+  "version": "0.0.14",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mozilla/webmaker-user-client.git"
+  },
+  "author": "Webmaker Product Team <webmaker-staff@mozillafoundation.org>",
+  "license": "MPLv2",
+  "dependencies": {
+    "request": "2.34.0"
+  },
+  "devDependencies": {
+    "express": "3.4.8",
+    "grunt": "0.4.2",
+    "grunt-contrib-jshint": "0.7.2",
+    "grunt-jsbeautifier": "0.2.6"
+  }
+}
