@@ -19,9 +19,11 @@ userClient.update.byEmail('kate@kate.com', {
 }, function(err, user) {
   console.log(user);
 });
+```
 
-## todo
+## Todo
 
+```js
 userClient.get.byEmail
 userClient.get.byUsername
 userClient.update.byUsername
