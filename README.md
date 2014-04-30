@@ -5,9 +5,9 @@
 `npm install webmaker-user-client`
 
 
-## usage
+## Usage
 
-```
+```js
 var UserClient = require('webmaker-user-client');
 
 var userClient = new UserClient({
