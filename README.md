@@ -9,7 +9,7 @@ You will need basic auth credentials for and a [Webmaker Login](https://github.c
 `npm install webmaker-user-client`
 
 
-## Usage
+## Setup
 
 ```js
 var UserClient = require('webmaker-user-client');
@@ -18,6 +18,35 @@ var userClient = new UserClient({
   endpoint: 'http://testuser:password@localhost:3000'
 });
 
+## User Object
+
+## Methods
+
+### Get
+
+#### By email
+
+```js
+userClient.get.byEmail('kate@kate.com', function (err, user) { ... });
+```
+
+#### By username
+
+```js
+userClient.get.byUsername('k88hudson', function (err, user) { ... });
+```
+
+#### By id
+
+```js
+userClient.get.byId('1023', function (err, user) { ... });
+```
+
+### Update
+
+#### By email
+
+```js
 userClient.update.byEmail('kate@kate.com', {
   isCollaborator: true
 }, function(err, user) {
@@ -28,8 +57,6 @@ userClient.update.byEmail('kate@kate.com', {
 ## Todo
 
 ```js
-userClient.get.byEmail
-userClient.get.byUsername
 userClient.update.byUsername
 userClient.delete.byEmail
 userClient.delete.byUsername
