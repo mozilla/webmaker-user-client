@@ -17,6 +17,7 @@ var UserClient = require('webmaker-user-client');
 var userClient = new UserClient({
   endpoint: 'http://testuser:password@localhost:3000'
 });
+```
 
 ## User Object
 
