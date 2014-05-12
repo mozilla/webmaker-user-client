@@ -1,13 +1,17 @@
 # Webmaker User Client
 
+Use this if you need to get, update, or delete information about a specific Webmaker user.
+
+You will need basic auth credentials for and a [Webmaker Login](https://github.com/mozilla/login.webmaker.org) endpoint to use it.
+
 ## Install
 
 `npm install webmaker-user-client`
 
 
-## usage
+## Usage
 
-```
+```js
 var UserClient = require('webmaker-user-client');
 
 var userClient = new UserClient({
@@ -19,9 +23,11 @@ userClient.update.byEmail('kate@kate.com', {
 }, function(err, user) {
   console.log(user);
 });
+```
 
-## todo
+## Todo
 
+```js
 userClient.get.byEmail
 userClient.get.byUsername
 userClient.update.byUsername
