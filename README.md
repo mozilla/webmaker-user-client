@@ -1,5 +1,9 @@
 # Webmaker User Client
 
+Use this if you need to get, update, or delete information about a specific Webmaker user.
+
+You will need basic auth credentials for and a [Webmaker Login](https://github.com/mozilla/login.webmaker.org) endpoint to use it.
+
 ## Install
 
 `npm install webmaker-user-client`
