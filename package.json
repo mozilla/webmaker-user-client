@@ -1,7 +1,7 @@
 {
   "name": "webmaker-user-client",
   "description": "Utility functions for querying the webmaker user database",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "scripts": {
     "test": "grunt"
