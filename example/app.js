@@ -39,6 +39,17 @@ app.get('/update/email/:email', function(req, res) {
   }, handleUser(res));
 });
 
+app.get('/update/id/:id', function(req, res) {
+  userClient.update.byId(req.params.id, {
+    bio: "Jon Buckley " + (Math.random() * 1000 | 0),
+    location: "Toronto, ON " + (Math.random() * 1000 | 0),
+    links: [
+      "http://jbuckley.ca/" + (Math.random() * 1000 | 0),
+      "http://jbuckley.ca/" + (Math.random() * 1000 | 0),
+    ]
+  }, handleUser(res));
+});
+
 app.listen(1985, function() {
-  console.log('App listening on 1985');
+  console.log('App listening on http://localhost:1985/');
 });

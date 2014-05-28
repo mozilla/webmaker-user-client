@@ -58,10 +58,20 @@ module.exports = function (options) {
   // UPDATE user methods
   self.update = {
     byEmail: function updateByEmail(email, user, callback) {
-      request.put(self.endpoint + '/api/user/email/' + email, {
+      request.patch(self.endpoint + '/api/user/email/' + email, {
         json: user
       }, self.returnUser(callback));
-    }
+    },
+    byId: function updateById(id, user, callback) {
+      request.patch(self.endpoint + '/api/user/id/' + id, {
+        json: user
+      }, self.returnUser(callback));
+    },
+    byUsername: function updateByUsername(username, user, callback) {
+      request.patch(self.endpoint + '/api/user/username/' + username, {
+        json: user
+      }, self.returnUser(callback));
+    },
   };
 
 };
