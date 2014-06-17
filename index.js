@@ -39,6 +39,30 @@ module.exports = function (options) {
     };
   };
 
+  self.returnUsers = function (callback) {
+    return function (err, resp, users) {
+      if (err) {
+        return callback(err);
+      }
+      if (!users) {
+        return callback({
+          error: 'No users were found'
+        });
+      }
+      if (typeof users !== 'object') {
+        try {
+          users = JSON.parse(users);
+        } catch (e) {
+          return callback({
+            error: 'Users object could not be parsed',
+            users: users
+          });
+        }
+      }
+      callback(null, users);
+    };
+  };
+
   // **********************
   // MAIN API
 
@@ -52,6 +76,33 @@ module.exports = function (options) {
     },
     byUsername: function getByEmail(username, callback) {
       request.get(self.endpoint + '/user/username/' + username, self.returnUser(callback));
+    },
+    byIds: function getByIds(ids, callback) {
+      request.post({
+        uri: self.endpoint + '/user/ids',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ids:ids })
+      }, self.returnUsers(callback));
+    },
+    byEmails: function getByEmails(emails, callback) {
+      request.post({
+        uri: self.endpoint + '/user/emails',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ emails: emails })
+      }, self.returnUsers(callback));
+    },
+    byUsernames: function getByUsernames(usernames, callback) {
+      request.post({
+        uri: self.endpoint + '/user/usernames',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ usernames: usernames })
+      }, self.returnUsers(callback));
     }
   };
 
