@@ -68,6 +68,24 @@ userClient.get.byUsername('k88hudson', function (err, user) { ... });
 userClient.get.byId('1023', function (err, user) { ... });
 ```
 
+#### By emails
+
+```js
+userClient.get.byEmails(['kate@kate.com','chris@chris.com'], function (err, users) { ... });
+```
+
+#### By usernames
+
+```js
+userClient.get.byUsernames(['k88hudson','cade'], function (err, users) { ... });
+```
+
+#### By ids
+
+```js
+userClient.get.byIds(['1023','1024'], function (err, users) { ... });
+```
+
 ### Update
 
 #### By email
