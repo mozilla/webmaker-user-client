@@ -21,18 +21,13 @@ module.exports = function (options) {
         return callback(err);
       }
       if (!user) {
-        return callback({
-          error: 'No user was found'
-        });
+        return callback(new Error('No user was found'));
       }
       if (typeof user !== 'object') {
         try {
           user = JSON.parse(user);
         } catch (e) {
-          return callback({
-            error: 'User object could not be parsed',
-            user: user
-          });
+          return callback(new Error('User object could not be parsed: ' + JSON.stringify(user)));
         }
       }
       callback(null, user);
@@ -45,18 +40,13 @@ module.exports = function (options) {
         return callback(err);
       }
       if (!users) {
-        return callback({
-          error: 'No users were found'
-        });
+        return callback(new Error('No users were found'));
       }
       if (typeof users !== 'object') {
         try {
           users = JSON.parse(users);
         } catch (e) {
-          return callback({
-            error: 'Users object could not be parsed',
-            users: users
-          });
+          return callback(new Error('Users object could not be parsed: ' + JSON.stringify(users)));
         }
       }
       callback(null, users);
