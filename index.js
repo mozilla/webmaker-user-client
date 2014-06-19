@@ -27,7 +27,7 @@ module.exports = function (options) {
         try {
           user = JSON.parse(user);
         } catch (e) {
-          return callback(new Error('User object could not be parsed: ' + JSON.stringify(user)));
+          return callback(new Error('User object could not be parsed: ' + user));
         }
       }
       callback(null, user);
@@ -46,7 +46,7 @@ module.exports = function (options) {
         try {
           users = JSON.parse(users);
         } catch (e) {
-          return callback(new Error('Users object could not be parsed: ' + JSON.stringify(users)));
+          return callback(new Error('Users object could not be parsed: ' + users));
         }
       }
       callback(null, users);
