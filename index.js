@@ -73,7 +73,9 @@ module.exports = function (options) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ids:ids })
+        body: JSON.stringify({
+          ids: ids
+        })
       }, self.returnUsers(callback));
     },
     byEmails: function getByEmails(emails, callback) {
@@ -82,7 +84,9 @@ module.exports = function (options) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ emails: emails })
+        body: JSON.stringify({
+          emails: emails
+        })
       }, self.returnUsers(callback));
     },
     byUsernames: function getByUsernames(usernames, callback) {
@@ -91,7 +95,9 @@ module.exports = function (options) {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ usernames: usernames })
+        body: JSON.stringify({
+          usernames: usernames
+        })
       }, self.returnUsers(callback));
     }
   };
