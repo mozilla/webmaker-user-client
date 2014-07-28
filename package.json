@@ -4,7 +4,8 @@
   "version": "0.1.1",
   "main": "index.js",
   "scripts": {
-    "test": "grunt"
+    "lint": "grunt",
+    "test": "npm run lint && jstest test/*_spec.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +14,14 @@
   "author": "Webmaker Product Team <webmaker-staff@mozillafoundation.org>",
   "license": "MPLv2",
   "dependencies": {
+    "bluebird": "2.2.2",
     "request": "2.34.0"
   },
   "devDependencies": {
     "express": "3.4.8",
     "grunt": "0.4.2",
     "grunt-contrib-jshint": "0.7.2",
-    "grunt-jsbeautifier": "0.2.6"
+    "grunt-jsbeautifier": "0.2.6",
+    "jstest": "1.0.5"
   }
 }

@@ -1,3 +1,4 @@
+var Promise = require('bluebird');
 var request = require('request');
 
 module.exports = function (options) {
@@ -120,5 +121,8 @@ module.exports = function (options) {
       }, self.returnUser(callback));
     },
   };
+
+  Promise.promisifyAll(self.get);
+  Promise.promisifyAll(self.update);
 
 };

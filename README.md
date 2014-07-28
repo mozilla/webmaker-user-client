@@ -98,6 +98,21 @@ userClient.update.byEmail('kate@kate.com', {
 });
 ```
 
+## Promises
+
+Every method also has a twin that returns a [Promise](https://www.npmjs.org/package/bluebird).
+Just append `Async` to the name:
+
+```js
+userClient.get.byUsernamesAsync(
+  ['jbuck', 'cade']
+).then(function(users) {
+  console.log('we got users: %j', users);
+}).catch(function(e) {
+  console.error('oh no: %s', e.stack);
+});
+```
+
 ## Todo
 
 ```js
